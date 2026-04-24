@@ -39,9 +39,20 @@ menu = st.sidebar.radio("Pilih Halaman", ["Home", "Halaman Data"])
 # Logika Halaman
 if menu == "Home":
     judul()
+    year = select_year()
+    df = load_data()
+    df_filtered = filter_data(df, year)
+    kolom(df_filtered)
+    pie_chart1(df_filtered)
+
 elif menu == "Halaman Data":
     judul()
-    show_data()
+    year = select_year()
+    df = load_data()
+    df_filtered = filter_data(df, year)
+    show_data(df_filtered)
 
 # Panggil footer di baris paling bawah agar selalu muncul
+
+
 footer()
